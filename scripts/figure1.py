@@ -63,7 +63,8 @@ ax.errorbar(OBS_N, OBS_PR, yerr=OBS_ERR,
             fmt="ks", color=C["data"], ms=4,
             capsize=4,
             zorder=5, label="Rader et al. (1994)")
-ax.set_ylabel(r"$P_{ss}(n)\,/\,P_{ss}(14)$")
+# ax.set_ylabel(r"$P_{ss}(n)\,/\,P_{ss}(14)$")
+ax.set_ylabel(r"$\hat{P}_{\mathrm{ss}}(n)$")
 ax.legend(loc="upper right", borderpad=0.6)
 ax.text(0.98, 0.15,
         rf"$\chi^2_{{(3)}} = {chi2_stat:.2f},\; p = {p_val:.3f}$",
@@ -95,7 +96,7 @@ panel_label(ax, "(c)", size=12)
 
 ax = axes[1, 1]
 ax.semilogy(N_ARR, E_norm, color=C["er_load"], lw=1.5)
-ax.set_ylabel(r"$E_{ss}(n)\,/\,E_{ss}(14)$")
+ax.set_ylabel(r"$\log(\hat{E}_{\mathrm{ss}}(n))$")
 ax.yaxis.set_major_formatter(ticker.FuncFormatter(
     lambda y, _: f"{y:g}"
 ))

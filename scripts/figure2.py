@@ -121,7 +121,7 @@ print(f"GOF — Posterior:  chi2={chi2_post:.2f}, p={p_post:.3f}")
 # ── Plot ───────────────────────────────────────────────────────────────────────
 
 fig, axes = plt.subplots(
-    2, 3, figsize=(15, 9), gridspec_kw={"hspace": 0.42, "wspace": 0.35}
+    3, 2, figsize=(9, 12), gridspec_kw={"hspace": 0.42, "wspace": 0.35}
 )
 
 # (a) lambda prior vs posterior
@@ -184,7 +184,7 @@ ax.legend(fontsize=9)
 panel_label(ax, "(b)", size=12)
 
 # (c) Joint posterior
-ax = axes[0, 2]
+ax = axes[1, 0]
 h = ax.hist2d(
     post_lam, post_kfold, bins=45, cmap=_COOLORS_CMAP, density=True
 )
@@ -219,7 +219,7 @@ ax.legend(fontsize=8, loc="upper right", facecolor="white", framealpha=0.9)
 panel_label(ax, "(c)", size=12)
 
 # (d) P_ss(n) model comparison
-ax = axes[1, 0]
+ax = axes[1, 1]
 ax.fill_between(
     N_ARR,
     result["P_lo95"],
@@ -268,7 +268,7 @@ ax.text(
 panel_label(ax, "(d)", size=12)
 
 # (e) k_ERAD(n)
-ax = axes[1, 1]
+ax = axes[2, 0]
 ax.semilogy(
     N_ARR,
     kerad_prior,
@@ -298,7 +298,7 @@ ax.legend(fontsize=8)
 panel_label(ax, "(e)", size=12)
 
 # (f) eta_ER(n)
-ax = axes[1, 2]
+ax = axes[2, 1]
 ax.plot(N_ARR, eta_prior * 100, color=COLOR_PRIOR, lw=2, ls="--", label="Prior")
 ax.plot(N_ARR, eta_post * 100, color=COLOR_POST_KF, lw=2, label="Posterior")
 ax.fill_between(

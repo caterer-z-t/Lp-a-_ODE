@@ -81,7 +81,7 @@ def apply_style() -> None:
 
 
 def panel_label(
-    ax, label: str, x: float = -0.13, y: float = 1.05, size: int = 9
+    ax, label: str, x: float = -0.13, y: float = 1.1, size: int = 9
 ) -> None:
     """Add a bold uppercase panel label (e.g. 'A') to the top-left of axes."""
     ax.text(
