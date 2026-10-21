@@ -83,7 +83,7 @@ def apoa_ode(t, y, n: float, p: dict, erad_model: str = "exp") -> list:
     f_deg_S = p["k_deg_S"] * S
     f_ERAD  = k_ERAD_exp(n, p) * E if erad_model == "exp" else ERAD_flux_mm(E, n, p)
 
-    dM   = f_tx  - p["k_deg_m"] * M
+    dM   = f_tx  - p["k_deg_m"] * M - f_tl
     dE   = f_tl  - f_fold - f_ERAD
     dS   = f_fold - f_assem - f_deg_S
     dPlp = f_assem - p["k_cl"] * Plp
