@@ -13,10 +13,10 @@ import sys
 from pathlib import Path
 
 SCRIPTS = [
-    "scripts/figure1.py",
     "scripts/figure2.py",
     "scripts/figure3.py",
     "scripts/figure4.py",
+    "scripts/figure5.py",
 ]
 
 if __name__ == "__main__":
